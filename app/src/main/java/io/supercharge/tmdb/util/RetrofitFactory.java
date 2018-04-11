@@ -42,12 +42,16 @@ public class RetrofitFactory {
     }
 
     public static Retrofit create(Context context, Converter.Factory converterFactory) {
-        return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+        Retrofit.Builder builder = new Retrofit.Builder();
+        builder.baseUrl(BASE_URL)
                 .client(cachingHttpClient(context))
-                .addConverterFactory(converterFactory)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
+
+        if (converterFactory != null) {
+            builder.addConverterFactory(converterFactory);
+        }
+
+        return builder.build();
     }
 
     private static OkHttpClient cachingHttpClient(Context context) {

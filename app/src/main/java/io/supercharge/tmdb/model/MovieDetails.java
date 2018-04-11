@@ -1,9 +1,10 @@
 
 package io.supercharge.tmdb.model;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class MovieDetails {
 
@@ -18,10 +19,7 @@ public class MovieDetails {
     private Object belongsToCollection;
     @SerializedName("budget")
     @Expose
-    private Integer budget;
-    @SerializedName("genres")
-    @Expose
-    private List<Genre> genres = null;
+    private Double budget;
     @SerializedName("homepage")
     @Expose
     private String homepage;
@@ -45,13 +43,7 @@ public class MovieDetails {
     private Double popularity;
     @SerializedName("poster_path")
     @Expose
-    private Object posterPath;
-    @SerializedName("production_companies")
-    @Expose
-    private List<ProductionCompany> productionCompanies = null;
-    @SerializedName("production_countries")
-    @Expose
-    private List<ProductionCountry> productionCountries = null;
+    private String posterPath;
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
@@ -61,9 +53,6 @@ public class MovieDetails {
     @SerializedName("runtime")
     @Expose
     private Integer runtime;
-    @SerializedName("spoken_languages")
-    @Expose
-    private List<SpokenLanguage> spokenLanguages = null;
     @SerializedName("status")
     @Expose
     private String status;
@@ -107,20 +96,12 @@ public class MovieDetails {
         this.belongsToCollection = belongsToCollection;
     }
 
-    public Integer getBudget() {
+    public Double getBudget() {
         return budget;
     }
 
-    public void setBudget(Integer budget) {
+    public void setBudget(Double budget) {
         this.budget = budget;
-    }
-
-    public List<Genre> getGenres() {
-        return genres;
-    }
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
     }
 
     public String getHomepage() {
@@ -179,28 +160,12 @@ public class MovieDetails {
         this.popularity = popularity;
     }
 
-    public Object getPosterPath() {
+    public String getPosterPath() {
         return posterPath;
     }
 
-    public void setPosterPath(Object posterPath) {
+    public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
-    }
-
-    public List<ProductionCompany> getProductionCompanies() {
-        return productionCompanies;
-    }
-
-    public void setProductionCompanies(List<ProductionCompany> productionCompanies) {
-        this.productionCompanies = productionCompanies;
-    }
-
-    public List<ProductionCountry> getProductionCountries() {
-        return productionCountries;
-    }
-
-    public void setProductionCountries(List<ProductionCountry> productionCountries) {
-        this.productionCountries = productionCountries;
     }
 
     public String getReleaseDate() {
@@ -225,14 +190,6 @@ public class MovieDetails {
 
     public void setRuntime(Integer runtime) {
         this.runtime = runtime;
-    }
-
-    public List<SpokenLanguage> getSpokenLanguages() {
-        return spokenLanguages;
-    }
-
-    public void setSpokenLanguages(List<SpokenLanguage> spokenLanguages) {
-        this.spokenLanguages = spokenLanguages;
     }
 
     public String getStatus() {

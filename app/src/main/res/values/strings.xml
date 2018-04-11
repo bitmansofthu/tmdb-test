@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TMDB</string>
     <string name="search_hint">Search movies...</string>
+
+    <string name="status_loading">Loading...</string>
+    <string name="status_error">Failed to download</string>
 </resources>

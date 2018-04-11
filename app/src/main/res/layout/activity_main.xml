@@ -6,12 +6,23 @@
     android:layout_height="match_parent"
     tools:context="io.supercharge.tmdb.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <EditText
         android:id="@+id/search_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:imeOptions="actionSearch"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:hint="@string/search_hint" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/movie_list"
@@ -20,5 +31,16 @@
         android:scrollbars="vertical"
         android:layout_below="@id/search_field"
         android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_field"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
 
 </RelativeLayout>

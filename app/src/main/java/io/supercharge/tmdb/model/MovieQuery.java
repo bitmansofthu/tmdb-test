@@ -23,7 +23,7 @@ import retrofit2.http.Query;
 
 public class MovieQuery {
 
-    private static final String API_KEY = "43a7ea280d085bd0376e108680615c7f";
+    public static final String API_KEY = "43a7ea280d085bd0376e108680615c7f";
 
     public interface Callback {
 
@@ -130,9 +130,13 @@ public class MovieQuery {
                 });
     }
 
-    public MovieQuery nextPage() {
-        page++;
+    public boolean nextPage() {
+        if (page < totalPages) {
+            page++;
 
-        return this;
+            return true;
+        }
+
+        return false;
     }
 }
